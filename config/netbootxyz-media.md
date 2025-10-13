@@ -23,7 +23,7 @@
 
 # Vanir Media Container
 - VMID: 100
-- OS: debian-12
+- OS: debian-13
 - Created via: Proxmox VM
 - Notes:
   - Purpose: Netboot.XYZ PXE Boot for home network served via docker
@@ -38,7 +38,7 @@
 - memory: 2048
 - net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:24:34:9F,ip=dhcp,type=veth
 - ostype: debian
-- rootfs: local-lvm:vm-3010102-disk-0,size=8G
+- rootfs: local-lvm:vm-3010101-disk-0,size=32G
 - swap: 512
 - tags: PXE,netboot
 - unprivileged: 1

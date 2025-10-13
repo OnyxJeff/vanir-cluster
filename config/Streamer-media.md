@@ -3,7 +3,7 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:150px;height:150px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>FFMPEG Streamer VM</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>FFMPEG Streamer LXC</h2>
 
 <span style='margin: 0 10px;'>
     <i class="fa fa-github fa-fw" style="color: #f5f5f5;"></i>
@@ -38,7 +38,7 @@
 - memory: 4096
 - net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:9D:17:C4,ip=dhcp,type=veth
 - ostype: debian
-- rootfs: local-lvm:vm-3010101-disk-0,size=8G
+- rootfs: local-lvm:vm-4010301-disk-0,size=8G
 - swap: 512
 - tags: streaming;twitch
 - unprivileged: 1
