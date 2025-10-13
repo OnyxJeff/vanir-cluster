@@ -1,0 +1,14 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore Docker temp files
+docker-compose.override.yml
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Ignore environment files
+*.env
