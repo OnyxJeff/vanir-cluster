@@ -3,7 +3,7 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/minecraft.png' alt='Logo' style='width:150px;height:150px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>Pelican-Wings LXC</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>Pelican-Wings (Minecraft) LXC</h2>
 
 <p style='margin: 16px 0;'>
     <a href='https://ko-fi.com/community_scripts' target='_blank' rel='noopener noreferrer'>

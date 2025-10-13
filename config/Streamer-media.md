@@ -3,7 +3,7 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:150px;height:150px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>FFMPEG: Streamer</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>FFMPEG Streamer</h2>
 
 <span style='margin: 0 10px;'>
     <i class="fa fa-github fa-fw" style="color: #f5f5f5;"></i>
