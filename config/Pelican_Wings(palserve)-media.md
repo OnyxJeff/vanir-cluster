@@ -1,6 +1,6 @@
 <div align='center'>
     <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/palworld.png' alt='Logo' style='width:150px;height:150px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/palworld.png' alt='Logo' style='width:300px;height:150px;'/>
     </a>
 
 <h2 style='font-size: 24px; margin: 20px 0;'>Pelican-Wings LXC</h2>
