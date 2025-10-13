@@ -1,6 +1,6 @@
 # Vanir-1
 
-Welcome to **Vanir-Cluster**, a core node in my personal homelab running Proxmox in High Availability mode. This node hosts essential cloud services including Nextcloud and Immich, plus various personal containers designed to keep my projects and daily workflows running smoothly and reliably.
+Welcome to **Vanir-Cluster**, a core node in my personal homelab running Proxmox. This node hosts essential cloud services including Nextcloud and Immich, plus various personal containers designed to keep my projects and daily workflows running smoothly and reliably.
 
 ![Build Status](https://github.com/OnyxJeff/vanir-cluster/actions/workflows/build.yml/badge.svg)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)
