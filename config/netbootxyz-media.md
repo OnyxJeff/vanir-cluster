@@ -3,7 +3,7 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/netboot.png' alt='Logo' style='width:150px;height:100px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>FFMPEG Streamer VM</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>Netboot.xyz VM</h2>
 
 <span style='margin: 0 10px;'>
     <i class="fa fa-github fa-fw" style="color: #f5f5f5;"></i>
