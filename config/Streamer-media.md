@@ -21,6 +21,16 @@
 
 ---
 
+# Vanir Media Container
+- VMID: 100
+- OS: debian-12
+- Created via: Proxmox VM
+- Notes:
+  - Purpose: Twitch-NOC Dashboard served via FFMPEG to Twitch.tv
+  - Storage: local-lvm
+  - Network: static IP bind via DHCP
+
+## Raw Proxmox Config
 - arch: amd64
 - cores: 2
 - features: nesting=1

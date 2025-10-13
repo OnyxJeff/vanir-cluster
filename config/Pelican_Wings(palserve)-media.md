@@ -1,6 +1,6 @@
 <div align='center'>
     <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/palworld.png' alt='Logo' style='width:81px;height:112px;'/>
     </a>
 
 <h2 style='font-size: 24px; margin: 20px 0;'>Pelican-Wings LXC</h2>
@@ -27,15 +27,25 @@
 
 ---
 
+# Vanir Media Container
+- CTID: 100
+- OS: debian-12
+- Created via: Proxmox Helper Scripts
+- Notes:
+  - Purpose: Palworld server served via Pelican-Wings
+  - Storage: local-lvm
+  - Network: static IP bind via DHCP
+
+## Raw Proxmox Config
 - arch: amd64
 - cores: 2
 - features: keyctl=1,nesting=1,fuse=1
-- hostname: hml-craft
-- memory: 8196
-- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:23:E1:C4,ip=dhcp,type=veth
+- hostname: hml-palserve
+- memory: 6144
+- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:1D:01:15,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-4010401-disk-0,size=40G
+- rootfs: local-lvm:vm-4010402-disk-0,size=40G
 - swap: 512
 - tags: community-script;gaming
 - unprivileged: 1
