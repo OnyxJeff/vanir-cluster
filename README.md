@@ -23,19 +23,19 @@ vanir-1/
 
 ## 🧰 Services
 
-[FFMPEG Logo](images/ffmpeg.png)
+![FFMPEG Logo](images/ffmpeg.png)
 - Streamer: FFMPEG streamer servicing a virtual display.
 
-[Minecraft Logo](images/minecraft.png)
+![Minecraft Logo](images/minecraft.png)
 - Minecraft: 3 separate Minecraft servers being served to Pelican-Panel via Wings.
 
-[Palworld Logo](images/palworld.png)
+![Palworld Logo](images/palworld.png)
 - Palworld Server: Palword game server being served to Pelican-Panel via Wings.
 
-[Pathfinder 2e Logo](images/pathfinder-2e.png)
+![Pathfinder 2e Logo](images/pathfinder-2e.png)
 - Pathfinder 2e Tools: Self-hosted wiki for Pathfinder 2nd Edition.
 
-[Netboot.XYZ Logo](images/netboot.png)
+![Netboot.XYZ Logo](images/netboot.png)
 - Netboot.xyz: Self-hosted PXE boot tool.
 
 ---
