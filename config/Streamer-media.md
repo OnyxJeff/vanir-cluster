@@ -38,7 +38,7 @@
 - memory: 4096
 - net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:9D:17:C4,ip=dhcp,type=veth
 - ostype: debian
-- rootfs: local-lvm:vm-4010301-disk-0,size=8G
+- rootfs: local-lvm:vm-3010101-disk-0,size=8G
 - swap: 512
 - tags: streaming;twitch
 - unprivileged: 1

@@ -26,19 +26,19 @@
 - OS: debian-12
 - Created via: Proxmox VM
 - Notes:
-  - Purpose: Twitch-NOC Dashboard served via FFMPEG to Twitch.tv
+  - Purpose: Netboot.XYZ PXE Boot for home network served via docker
   - Storage: local-lvm
   - Network: static IP bind via DHCP
 
 ## Raw Proxmox Config
 - arch: amd64
-- cores: 2
+- cores: 1
 - features: nesting=1
-- hostname: hml-streamer
-- memory: 4096
-- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:9D:17:C4,ip=dhcp,type=veth
+- hostname: hml-skuld
+- memory: 2048
+- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:24:34:9F,ip=dhcp,type=veth
 - ostype: debian
-- rootfs: local-lvm:vm-4010301-disk-0,size=8G
+- rootfs: local-lvm:vm-3010102-disk-0,size=8G
 - swap: 512
-- tags: streaming;twitch
+- tags: PXE,netboot
 - unprivileged: 1
