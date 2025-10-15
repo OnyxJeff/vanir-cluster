@@ -1,3 +1,4 @@
+---
 name: Repo Integrity & Structure Check
 
 on:
@@ -18,7 +19,9 @@ jobs:
       - name: Validate YAML files (default rules, tolerate warnings)
         uses: ibiqlik/action-yamllint@v3
         with:
-          strict: false # warnings will NOT cause failure
+          strict: false
+          format: parsable
+          no_warnings: false
 
       - name: Check for broken symlinks
         run: |
