@@ -1,11 +1,14 @@
+---
 extends: default
 
 rules:
+  document-start: disable           # Don't require '---'
+  truthy:
+    allowed-values: ['true', 'false', 'on', 'off', 'yes', 'no']
+    forbid-implicit: false          # Allow natural booleans like 'true'
   line-length:
     max: 200
     allow-non-breakable-words: true
-  indentation:
-    indent-sequences: consistent
   trailing-spaces: disable
   comments: disable
   new-line-at-end-of-file: disable
