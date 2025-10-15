@@ -1,4 +1,4 @@
-name: CI
+name: Repo Integrity & Structure Check
 
 on:
   push:
@@ -8,10 +8,40 @@ on:
 
 jobs:
   validate:
+    name: Validate Repo Structure
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: Validate YAML files
-        uses: ibiqlik/action-yamllint@v1
+        uses: ibiqlik/action-yamllint@v3
         with:
-          configFile: .github/.yamllint.yml
+          config_file: .yamllint.yml
+          strict: true
+          format: auto
+
+      - name: Check for broken symlinks
+        run: |
+          echo "Scanning for broken symlinks..."
+          ! find . -type l ! -exec test -e {} \; -print | grep .
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON structure..."
+          find . -type f -name "*.json" -print0 | xargs -0 -n1 jq empty
+
+      - name: Validate expected directory layout
+        run: |
+          echo "Checking for required directories..."
+          for d in hardware images notes .github/workflows; do
+            if [ ! -d "$d" ]; then
+              echo "❌ Missing expected directory: $d"
+              exit 1
+            fi
+          done
+          echo "✅ All required directories present."
+
+      - name: Success message
+        run: echo "✅ Repo integrity & structure checks passed."
