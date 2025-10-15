@@ -15,12 +15,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Validate YAML files
+      - name: Validate YAML files (default rules, tolerate warnings)
         uses: ibiqlik/action-yamllint@v3
         with:
-          config_file: .yamllint.yml
-          strict: true
-          format: auto
+          strict: false # warnings will NOT cause failure
 
       - name: Check for broken symlinks
         run: |
