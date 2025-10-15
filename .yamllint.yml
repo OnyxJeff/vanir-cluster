@@ -1,0 +1,11 @@
+extends: default
+
+rules:
+  line-length:
+    max: 200
+    allow-non-breakable-words: true
+  indentation:
+    indent-sequences: consistent
+  trailing-spaces: disable
+  comments: disable
+  new-line-at-end-of-file: disable
