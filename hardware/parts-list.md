@@ -1,4 +1,4 @@
-# ⚔️ Vanir-1: Best Bang-for-Buck Dual Socket DDR4 Server (~$500 Target)
+# ⚔️ Vanir-1: It's a NUC!
 
 ## 🧠 CPU: Intel i5-5300u (2c/4t)
 - 2.3 GHz base, 2.9 GHz turbo
