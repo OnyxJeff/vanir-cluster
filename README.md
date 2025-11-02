@@ -35,8 +35,8 @@ vanir-1/
 ![Pathfinder 2e Logo](images/pathfinder-2e.png)
 - Pathfinder 2e Tools: Self-hosted wiki for Pathfinder 2nd Edition.
 
-![Netboot.XYZ Logo](images/netboot.png)
-- Netboot.xyz: Self-hosted PXE boot tool.
+![PDM Logo](images/pdm.png)
+- ProxMox Datacenter Manager: Self-hosted PVE dashboard for all clusters in a network.
 
 ---
 
