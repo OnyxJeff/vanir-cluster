@@ -1,12 +1,23 @@
-# Vanir-1
-
-Welcome to **Vanir-Cluster**, a core node in my personal homelab running Proxmox. This node hosts essential cloud services including Nextcloud and Immich, plus various personal containers designed to keep my projects and daily workflows running smoothly and reliably.
+# Vanir-Cluster
 
 ![Build Status](https://github.com/OnyxJeff/vanir-cluster/actions/workflows/build.yml/badge.svg)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![GitHub release](https://img.shields.io/github/v/release/OnyxJeff/vanir-cluster)
 ![Issues](https://img.shields.io/github/issues/OnyxJeff/vanir-cluster)
+
+Vanir is the scrappy Intel NUC hero of the homelab — small but shockingly capable.  
+It runs on an i5-5300U, 16GB of RAM, and enough determination to power a small village.
+
+### 🧭 Purpose
+Vanir handles lightweight LXCs, development tools, streaming utilities, and auxiliary services.  
+Think of it as the utility knife of the environment: not the strongest, but always handy.
+
+### 🏗️ Current Highlights
+- All-LXC setup for minimal overhead
+- Streamer LXC using FFMPEG to broadcast Grafana dashboards to Twitch (for science… or bragging)
+- Pathfinder 2e wiki/tools container for instant rule lookups
+- Proxmox Datacenter Manager for keeping the larger cluster honest
 
 ## 📁 Repo Structure
 
