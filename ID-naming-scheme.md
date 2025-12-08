@@ -50,21 +50,21 @@ A B C D E
 
 ## 🔹 Example IDs for Current CTs/VMs
 
-| Service / Container   | Type | Env | Dept | Seq | 5-Digit ID |
-|----------------------|------|-----|------|-----|------------|
-| Authelia             | CT   | Prod| 0    | 01  | 20001      |
-| Vaultwarden          | CT   | Prod| 0    | 02  | 20002      |
-| Mimir (Grafana)      | CT   | Prod| 3    | 01  | 20301      |
-| Loki                 | CT   | Prod| 3    | 02  | 20302      |
-| Nextcloud            | CT   | Prod| 4    | 01  | 20401      |
-| Immich               | CT   | Prod| 4    | 02  | 20402      |
-| FFMPEG Streamer      | CT   | Exp | 1    | 01  | 21101      |
-| Minecraft Servers    | CT   | Exp | 7    | 01  | 21701      |
-| Palworld Server      | CT   | Exp | 7    | 02  | 21702      |
-| Home Assistant       | CT   | Prod| 6    | 01  | 20601      |
-| Nginx Proxy Manager  | CT   | Prod| 8    | 01  | 20801      |
-| ConvertX             | CT   | Exp | 2    | 01  | 21201      |
-| Portainer VM         | VM   | Prod| 5    | 01  | 10051      |
+| Service / Container  | Type | Env  | Dept | Seq | 5-Digit ID |
+|----------------------|------|------|------|-----|------------|
+| Authelia             | CT   | Prod | 0    | 01  | 20001      |
+| Vaultwarden          | CT   | Prod | 0    | 02  | 20002      |
+| Mimir (Grafana)      | CT   | Prod | 3    | 01  | 20301      |
+| Loki                 | CT   | Prod | 3    | 02  | 20302      |
+| Nextcloud            | CT   | Prod | 4    | 01  | 20401      |
+| Immich               | CT   | Prod | 4    | 02  | 20402      |
+| FFMPEG Streamer      | CT   | Exp  | 1    | 01  | 21101      |
+| Minecraft Servers    | CT   | Exp  | 7    | 01  | 21701      |
+| Palworld Server      | CT   | Exp  | 7    | 02  | 21702      |
+| Home Assistant       | CT   | Prod | 6    | 01  | 20601      |
+| Nginx Proxy Manager  | CT   | Prod | 8    | 01  | 20801      |
+| ConvertX             | CT   | Exp  | 2    | 01  | 21201      |
+| Portainer VM         | VM   | Prod | 5    | 01  | 10051      |
 
 ---
 
