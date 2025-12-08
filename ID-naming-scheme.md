@@ -18,14 +18,14 @@ A B C D E
 ---
 
 ### 1️⃣ First Digit – Type
-- `1` → HA VM  
-- `2` → HA LXC / Container  
+- `1` → VM  
+- `2` → LXC / Container  
 - `3` → VM (Homelab Nodes) 
 - `4` → LXC / Container (Homelab Nodes)
 
 ### 2️⃣ Second Digit – Environment
-- `0` → Production / Live (do not modify lightly)  
-- `1` → Experimental / Staging / Dev (can be modified or overwritten)  
+- `0` → Production / Live (do not modify lightly / Aesir)
+- `1` → Experimental / Staging / Dev (can be modified or overwritten / Vanir)
 
 ### 3️⃣ Third Digit – Department / Category
 
