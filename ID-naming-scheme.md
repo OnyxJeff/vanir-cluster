@@ -9,12 +9,13 @@ This document explains the **5-digit ID scheme** used for all my containers (CTs
 A B C D E
 ```
 
-| Digit  | Meaning                                          |
-|------- |------------------------------------------------- |
-| A      | Type                                             |
-| B      | Environment / Role                               |
-| C      | Department / Category                            |
-| D E    | Sequential number per department                 |
+| Digit | Meaning                          |
+|-------|----------------------------------|
+| A     | Type                             |
+| B     | Environment / Role               |
+| C     | Department / Category            |
+| D E   | Sequential number per department |
+
 ---
 
 ### 1️⃣ First Digit – Type
@@ -29,18 +30,18 @@ A B C D E
 
 ### 3️⃣ Third Digit – Department / Category
 
-| Digit | Category                     | Example Services                                     |
-|-------|------------------------------|-----------------------------------------------------|
-| 0     | Security / Authentication     | Authelia, Vaultwarden, Fail2Ban                    |
-| 1     | Media / Streaming             | FFMPEG Streamer, Pelican Panel, Plex, Jellyfin     |
-| 2     | Utilities / Support           | ConvertX, Cron jobs, rclone                         |
-| 3     | Monitoring / Observability    | Mimir (Grafana), Loki, Prometheus node exporters   |
-| 4     | Cloud / File Services         | Nextcloud, Immich, MinIO                             |
-| 5     | Development / Git             | Gitea, Gitlab                                      |
-| 6     | Home / Automation             | Home Assistant (Frigg), Node-RED                   |
-| 7     | Gaming / Virtual Worlds       | Minecraft, Palworld                                 |
-| 8     | Web / Proxy / Networking      | Nginx Proxy Manager, Traefik, Pi-hole             |
-| 9     | Misc / Experimental           | Test containers, staging apps                       |
+| Digit | Category                   | Example Services                                 |
+|-------|----------------------------|--------------------------------------------------|
+| 0     | Security / Authentication  | Authelia, Vaultwarden, Fail2Ban                  |
+| 1     | Media / Streaming          | FFMPEG Streamer, Pelican Panel, Plex, Jellyfin   |
+| 2     | Utilities / Support        | ConvertX, Cron jobs, rclone                      |
+| 3     | Monitoring / Observability | Mimir (Grafana), Loki, Prometheus node exporters |
+| 4     | Cloud / File Services      | Nextcloud, Immich, MinIO                         |
+| 5     | Development / Git          | Gitea, Gitlab                                    |
+| 6     | Home / Automation          | Home Assistant (Frigg), Node-RED                 |
+| 7     | Gaming / Virtual Worlds    | Minecraft, Palworld                              |
+| 8     | Web / Proxy / Networking   | Nginx Proxy Manager, Traefik, Pi-hole            |
+| 9     | Misc / Experimental        | Test containers, staging apps                    |
 
 ### 4️⃣ & 5️⃣ Fourth and Fifth Digits – Sequential Number
 - Incremented per department to ensure unique IDs.  
