@@ -13,3 +13,4 @@ docker-compose.override.yml
 # Ignore environment files
 *.env
 *.settings
+*.vars

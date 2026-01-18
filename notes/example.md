@@ -1,1 +1,0 @@
-Logs or notes by date, or stream-of-thought. Whatever helps you keep track of things.

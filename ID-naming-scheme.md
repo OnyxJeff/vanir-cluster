@@ -21,8 +21,6 @@ A B C D E
 ### 1️⃣ First Digit – Type
 - `1` → VM  
 - `2` → LXC / Container  
-- `3` → VM (Homelab Nodes) 
-- `4` → LXC / Container (Homelab Nodes)
 
 ### 2️⃣ Second Digit – Environment
 - `0` → Production / Live (do not modify lightly / Aesir)

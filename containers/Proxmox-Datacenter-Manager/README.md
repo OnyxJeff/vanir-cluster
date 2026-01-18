@@ -1,6 +1,6 @@
 <div align='center'>
     <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/pathfinder-2e.png' alt='Logo' style='width:174px;height:112px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/pdm.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
 <h2 style='font-size: 24px; margin: 20px 0;'>Pf2eTools LXC</h2>
@@ -27,25 +27,25 @@
 
 ---
 
-# Pathfinder 2e Tools/Wiki Container
-- CTID: 21701
+# Proxmox Datacenter Manager Container
+- CTID: 21301
 - OS: debian
 - Created via: Proxmox Helper Scripts
 - Notes:
-  - Purpose: Pathfinder 2nd Edition Tools/Wiki
+  - Purpose: Proxmox Datacenter Manager
   - Storage: local-lvm
   - Network: static IPv4 bind via DHCP / No IPv6
 
 ## Raw Proxmox Config
 - arch: amd64
-- cores: 1
+- cores: 2
 - features: keyctl=1,nesting=1,fuse=1
-- hostname: hml-pf2etools
-- memory: 512
+- hostname: hml-skuld
+- memory: 2048
 - net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-*-disk-0,size=6G
+- rootfs: local-lvm:vm-*-disk-0,size=10G
 - swap: 512
 - tags: community-script;wiki
 - unprivileged: 1

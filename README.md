@@ -19,35 +19,56 @@ Think of it as the utility knife of the environment: not the strongest, but alwa
 - Pathfinder 2e wiki/tools container for instant rule lookups
 - Proxmox Datacenter Manager for keeping the larger cluster honest
 
-## 📁 Repo Structure
-
+## 📂 Directory Structure
 ```text
-vanir-1/
-├── .github/workflows/    # CI for validation
-├── hardware/             # Parts list and hardware used
-├── images/               # Photos of hardware and software used
-├── notes/                # Setup logs and notes
-└── README.md             # You’re reading it!
+vanir-cluster/
+├── containers/
+│ ├── Authelia/
+│ │ ├── lxc-config.conf
+│ │ └── README.md
+│ ├── Beszel/
+│ │ └── ...
+│ └── ...
+├── env/
+│ ├── gitea.env.example
+│ └── media-stack.env.example
+├── hardware/
+│ └── parts-list.md
+├── images/
+│ ├── <container>.png
+│ ├── <container>.png
+│ ├── ...
+│ └── ...
+├── scripts/
+│ ├── deploy.sh
+│ └── backup.sh
+├── VMs/
+│ ├── Future_VM/
+│ │ ├── vm-config.conf
+│ │ └── README.md
+│ ├── Portainer/
+│ │ └── ...
+│ └── ...
+├── .gitignore
+└── README.md
 ```
 
 ---
 
 ## 🧰 Services
 
-![FFMPEG Logo](images/ffmpeg.png)
-- Streamer: FFMPEG streamer servicing a virtual display.
-
-![Minecraft Logo](images/minecraft.png)
-- Minecraft: 3 separate Minecraft servers being served to Pelican-Panel via Wings.
-
-![Palworld Logo](images/palworld.png)
-- Palworld Server: Palword game server being served to Pelican-Panel via Wings.
-
-![Pathfinder 2e Logo](images/pathfinder-2e.png)
-- Pathfinder 2e Tools: Self-hosted wiki for Pathfinder 2nd Edition.
-
-![PDM Logo](images/pdm.png)
-- ProxMox Datacenter Manager: Self-hosted PVE dashboard for all clusters in a network.
+- Streamer
+- - FFMPEG streamer servicing a virtual display.
+- Minecraft
+- - 3 separate Minecraft servers being served to Pelican-Panel via Wings.
+- Palworld Server
+- - Palword game server being served to Pelican-Panel via Wings.
+- Pathfinder 2e Tools
+- - Self-hosted wiki for Pathfinder 2nd Edition.
+- ProxMox Datacenter Manager
+- - Self-hosted PVE dashboard for all clusters in a network.
+- Spoolman
+- - Self-hosted web service designed to help efficiently manage 3D printer filament spools and monitor their usage
 
 ---
 
