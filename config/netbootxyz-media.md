@@ -33,12 +33,12 @@
 ## Raw Proxmox Config
 - arch: amd64
 - cores: 1
-- features: nesting=1
-- hostname: hml-skuld
+- features: keyctl=1,nesting=1,fuse=1
+- hostname: hml-netboot
 - memory: 2048
-- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:24:34:9F,ip=dhcp,type=veth
+- net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - ostype: debian
-- rootfs: local-lvm:vm-3010101-disk-0,size=32G
+- rootfs: local-lvm:vm-*-disk-0,size=32G
 - swap: 512
 - tags: PXE,netboot
 - unprivileged: 1

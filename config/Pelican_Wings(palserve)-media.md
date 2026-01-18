@@ -42,10 +42,10 @@
 - features: keyctl=1,nesting=1,fuse=1
 - hostname: hml-palserve
 - memory: 6144
-- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:1D:01:15,ip=dhcp,type=veth
+- net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-4010402-disk-0,size=40G
+- rootfs: local-lvm:vm-*-disk-0,size=40G
 - swap: 512
 - tags: community-script;gaming
 - unprivileged: 1

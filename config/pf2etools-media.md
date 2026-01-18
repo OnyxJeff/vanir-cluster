@@ -42,10 +42,10 @@
 - features: keyctl=1,nesting=1,fuse=1
 - hostname: hml-pf2etools
 - memory: 512
-- net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:B6:AF:A1,ip=dhcp,type=veth
+- net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-4010403-disk-0,size=6G
+- rootfs: local-lvm:vm-*-disk-0,size=6G
 - swap: 512
 - tags: community-script;wiki
 - unprivileged: 1
