@@ -53,28 +53,28 @@
 ---
 
 ## 📦 Overview
-Beszel is a lightweight monitoring and metrics collector that integrates seamlessly with Grafana (Mimir) to visualize performance data across containers and servers in the homelab.
+Pathfinder 2e Tools (pf2eTools) is a self-hosted web application that provides fast access to Pathfinder 2e rules content, references, and utilities. This container hosts a private, always-available instance for table use, prep work, and general rules lookups—no ads, no downtime, no excuses.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `beszel-ct.sh`
-- CT ID: `20301`
+- Created via Proxmox Helper Script: `pf2etools-ct.sh`
+- CT ID: `21701`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `1 vCPU / 512MB / 5GB`
+- CPU / RAM / Storage: `1 vCPU / 512MB / 6GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- Beszel monitoring agent and dashboard
-- Exposes metrics compatible with Prometheus and Grafana
+- pf2eTools web application
+- Static content server for Pathfinder 2e rules and references
 
 ## 🚀 Usage
-- Access via web UI: `http://<ip_address>:8090`
-- Integrate with Grafana on Mimir using Prometheus endpoints
+- Access via web UI: `http://<ip_address>`
+- Browse rules, spells, feats, items, and bestiary content
+- Suitable for GM prep, player reference, and in-session use
 
 ## 🔐 Configuration
-- Environment variables and secrets are set via the helper script and `.settings` files
-  - examples in `lxc-config.conf`
-- Configuration files stored inside `/config` volume mounted in the container 
+- Environment variables and secrets are set via the helper script and `*.vars` files
 
 ## 📌 Notes / TODO
-- Enable authentication for dashboard (optional)
-- Add alert rules for critical thresholds
+- Add reverse proxy and HTTPS
+- Implement access controls if exposed externally
+- Schedule content updates as part of maintenance workflow

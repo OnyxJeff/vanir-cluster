@@ -47,34 +47,34 @@
 - ostype: debian
 - rootfs: local-lvm:vm-*-disk-0,size=4G
 - swap: 512
-- tags: community-script;
+- tags: community-script;3d-printing
 - unprivileged: 1
 
 ---
 
 ## 📦 Overview
-Beszel is a lightweight monitoring and metrics collector that integrates seamlessly with Grafana (Mimir) to visualize performance data across containers and servers in the homelab.
+Spoolman is a lightweight filament management system for 3D printing, used to track filament spools, usage, and costs across printers and print jobs. This container provides a centralized Spoolman instance for the homelab, designed to integrate cleanly with OctoPrint, Klipper, and related tooling.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `beszel-ct.sh`
-- CT ID: `20301`
+- Created via Proxmox Helper Script: `spoolman-ct.sh`
+- CT ID: `21302`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `1 vCPU / 512MB / 5GB`
+- CPU / RAM / Storage: `1 vCPU / 1GB / 4GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- Beszel monitoring agent and dashboard
-- Exposes metrics compatible with Prometheus and Grafana
+- Spoolman web application
+- REST API for printer and slicer integrations
 
 ## 🚀 Usage
-- Access via web UI: `http://<ip_address>:8090`
-- Integrate with Grafana on Mimir using Prometheus endpoints
+- Access via web UI: `http://<ip_address>:7912`
+- Manage filament spools, materials, and usage data
+- Integrate with printers and slicers via Spoolman API
 
 ## 🔐 Configuration
-- Environment variables and secrets are set via the helper script and `.settings` files
-  - examples in `lxc-config.conf`
-- Configuration files stored inside `/config` volume mounted in the container 
+- Environment variables and secrets are set via the helper script and `*.vars` files
 
 ## 📌 Notes / TODO
-- Enable authentication for dashboard (optional)
-- Add alert rules for critical thresholds
+- Enable authentication or reverse-proxy protection
+- Integrate with OctoPrint / Klipper for automatic usage tracking
+- Add regular backups of the Spoolman database

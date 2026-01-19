@@ -1,0 +1,26 @@
+# App-specific defaults for Spoolman (spoolman)
+# Generated on 2026-01-18T22:46:12Z
+
+var_unprivileged=1
+var_cpu=1
+var_ram=1024
+var_disk=4
+var_brg=vmbr0
+var_net=dhcp
+var_mac=<insert desired MAC address OR leave blank to auto-generate>
+var_ipv6_method=none
+var_ssh=yes
+var_apt_cacher=no
+var_fuse=yes
+var_tun=no
+var_gpu=no
+var_nesting=1
+var_keyctl=1
+var_mknod=0
+var_protection=no
+var_timezone=America/New_York
+var_tags=<insert desired tags OR leave blank for default>
+var_verbose=no
+var_hostname=<insert desired hostname OR leave blank for default>
+var_template_storage=<insert template storage>
+var_container_storage=<insert container storage>

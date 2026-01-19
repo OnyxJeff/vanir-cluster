@@ -52,25 +52,31 @@
 ---
 
 ## 📦 Overview
-Beszel is a lightweight monitoring and metrics collector that integrates seamlessly with Grafana (Mimir) to visualize performance data across containers and servers in the homelab.
+Netboot.xyz is a flexible network boot solution that allows you to PXE boot installers, rescue systems, and utilities over the network—without constantly rebuilding images. This Debian VM acts as the central Netboot.xyz host for the homelab, serving menus and assets on demand.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `netbootxyz-ct.sh`
-- CT ID: `21901`
+- Created via Proxmox Helper Script: `debian_VM-vm.sh`
+- CT ID: `11901`
 - OS / Template: Debian-based LXC template (from script)
 - CPU / RAM / Storage: `1 vCPU / 4GB / 6GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- Beszel monitoring agent and dashboard
-- Exposes metrics compatible with Prometheus and Grafana
+- Netboot.xyz (HTTP + TFTP assets)
+- Optional local caching of boot images
+- Designed to integrate with existing DHCP (no forced takeover)
 
 ## 🚀 Usage
-- Access via web UI: `http://<ip_address>`
+- PXE boot a client on the same network
+- Select **netboot.xyz** from your boot menu
+- Access via web UI (if enabled): `http://<ip_address>`
 
 ## 🔐 Configuration
-- Environment variables and secrets are set via the helper script and `*.vars` files 
+- DHCP handled externally (router or dedicated DHCP server)
+- Netboot.xyz configuration files stored under `/opt/netboot.xyz`
+- Custom menus and overrides supported via local config files
 
 ## 📌 Notes / TODO
-- Enable authentication for dashboard (optional)
-- Add alert rules for critical thresholds
+- Add custom boot entries (rescue tools, firmware updaters)
+- Enable image caching for faster repeat boots
+- Document DHCP options for different environments

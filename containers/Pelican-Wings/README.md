@@ -1,6 +1,6 @@
 <div align='center'>
     <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:174px;height:112px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/pelican-panel.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
 <h2 style='font-size: 24px; margin: 20px 0;'>Pf2eTools LXC</h2>
@@ -27,57 +27,60 @@
 
 ---
 
-# Streamer-Debian Container
-- CTID: 21101
+# Pelican-Panel Container
+- CTID: 21702
 - OS: debian
 - Created via: Proxmox Helper Scripts
 - Notes:
-  - Purpose: Streamer
+  - Purpose: Pelican-Panel
   - Storage: local-lvm
   - Network: static IPv4 bind via DHCP / No IPv6
 
 ## Raw Proxmox Config
 - arch: amd64
-- cores: 4
+- cores: 2
 - features: keyctl=1,nesting=1,fuse=1
-- hostname: hml-streamer
-- memory: 8196
+- hostname: gms-*serve
+- memory: 4096
 - net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-*-disk-0,size=10G
+- rootfs: local-lvm:vm-*-disk-0,size=8G
 - swap: 512
-- tags: community-script;
+- tags: community-script;Gaming
 - unprivileged: 1
 
 ---
 
 ## 📦 Overview
-This container provides a lightweight, headless streaming service built on FFmpeg, designed to continuously stream a Grafana playlist (dashboards rendered as video) directly to Twitch. It serves as the foundation for automated “status TV”–style broadcasts from the homelab.
+Pelican Panel is a self-hosted game server management panel designed to deploy, manage, and monitor game servers through a modern web interface. This container hosts the Pelican control panel, providing centralized user management, server provisioning, and resource oversight for homelab-hosted game servers.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `debian_CT-ct.sh`
-- CT ID: `21101`
+- Created via Proxmox Helper Script: `pelican_panel-ct.sh`
+- CT ID: `21702`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `4 vCPU / 8196MB / 10GB`
+- CPU / RAM / Storage: `2 vCPU / 4GB / 8GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- FFmpeg (video capture, encoding, and streaming)
-- Headless streaming workflow for Grafana dashboards
-- Push-based RTMP stream to Twitch
+- Pelican Panel web application
+- Backend services for server orchestration and management
+- API endpoints for automation and integration
 
 ## 🚀 Usage
-- Start the streaming service inside the container
-- FFmpeg pulls from the Grafana playlist URL and streams to Twitch RTMP ingest
-- Stream appears live on the configured Twitch channel
+- Access via web UI: `http://<ip_address>`
+- Create and manage game servers via the panel
+- Assign users, permissions, and resource limits
+- Monitor server status and basic metrics
 
 ## 🔐 Configuration
 - Environment variables and secrets are set via the helper script and `*.vars` files
-  - Twitch stream key
-  - Grafana playlist URL and auth token (if required)
+  - Database credentials
+  - Panel encryption keys and app secrets
+  - Mail and authentication settings
 
 ## 📌 Notes / TODO
-- Add systemd service for auto-start and restart
-- Tune FFmpeg encoding settings for bitrate and CPU efficiency
-- Optional: add “stream offline” fallback screen
+- Deploy Wings (node daemon) on compute hosts
+- Place panel behind a reverse proxy with HTTPS
+- Configure backups and off-site storage
+- Lock down panel access with proper roles and permissions

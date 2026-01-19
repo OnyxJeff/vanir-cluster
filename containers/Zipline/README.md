@@ -1,6 +1,6 @@
 <div align='center'>
     <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:174px;height:112px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/zipline.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
 <h2 style='font-size: 24px; margin: 20px 0;'>Pf2eTools LXC</h2>
@@ -27,57 +27,58 @@
 
 ---
 
-# Streamer-Debian Container
-- CTID: 21101
+# Zipline Container
+- CTID: 21801
 - OS: debian
 - Created via: Proxmox Helper Scripts
 - Notes:
-  - Purpose: Streamer
+  - Purpose: Zipline
   - Storage: local-lvm
   - Network: static IPv4 bind via DHCP / No IPv6
 
 ## Raw Proxmox Config
 - arch: amd64
-- cores: 4
+- cores: 2
 - features: keyctl=1,nesting=1,fuse=1
-- hostname: hml-streamer
-- memory: 8196
+- hostname: hml-zippy
+- memory: 2048
 - net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
 - onboot: 1
 - ostype: debian
-- rootfs: local-lvm:vm-*-disk-0,size=10G
+- rootfs: local-lvm:vm-*-disk-0,size=5G
 - swap: 512
-- tags: community-script;
+- tags: community-script;file;sharing
 - unprivileged: 1
 
 ---
 
 ## 📦 Overview
-This container provides a lightweight, headless streaming service built on FFmpeg, designed to continuously stream a Grafana playlist (dashboards rendered as video) directly to Twitch. It serves as the foundation for automated “status TV”–style broadcasts from the homelab.
+Zipline is a lightweight, self-hosted file upload and sharing service designed for quick uploads, short links, and easy sharing across the homelab. This container provides a private alternative to public file hosts for screenshots, clips, logs, and other transient files.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `debian_CT-ct.sh`
-- CT ID: `21101`
+- Created via Proxmox Helper Script: `zipline-ct.sh`
+- CT ID: `21801`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `4 vCPU / 8196MB / 10GB`
+- CPU / RAM / Storage: `2 vCPU / 2GB / 5GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- FFmpeg (video capture, encoding, and streaming)
-- Headless streaming workflow for Grafana dashboards
-- Push-based RTMP stream to Twitch
+- Zipline web application
+- REST API for uploads and link management
+- Local file storage backend
 
 ## 🚀 Usage
-- Start the streaming service inside the container
-- FFmpeg pulls from the Grafana playlist URL and streams to Twitch RTMP ingest
-- Stream appears live on the configured Twitch channel
+- Access via web UI: `http://<ip_address>`
+- Upload files via web interface, API, or CLI tools
+- Share files using automatically generated short URLs
 
 ## 🔐 Configuration
 - Environment variables and secrets are set via the helper script and `*.vars` files
-  - Twitch stream key
-  - Grafana playlist URL and auth token (if required)
+  - Database connection details
+  - Storage path and retention settings
+  - Authentication and user management options
 
 ## 📌 Notes / TODO
-- Add systemd service for auto-start and restart
-- Tune FFmpeg encoding settings for bitrate and CPU efficiency
-- Optional: add “stream offline” fallback screen
+- Place behind a reverse proxy with HTTPS
+- Configure upload limits and retention policies
+- Add automated backups for uploaded content

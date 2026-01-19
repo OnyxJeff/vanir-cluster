@@ -47,34 +47,35 @@
 - ostype: debian
 - rootfs: local-lvm:vm-*-disk-0,size=10G
 - swap: 512
-- tags: community-script;wiki
+- tags: community-script;datacenter
 - unprivileged: 1
 
 ---
 
 ## 📦 Overview
-Beszel is a lightweight monitoring and metrics collector that integrates seamlessly with Grafana (Mimir) to visualize performance data across containers and servers in the homelab.
+Proxmox Datacenter Manager provides a centralized web interface for managing multiple Proxmox VE nodes and clusters from a single pane of glass. This container is used to aggregate visibility, simplify administration, and reduce context-switching across the homelab’s Proxmox infrastructure.
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `beszel-ct.sh`
-- CT ID: `20301`
+- Created via Proxmox Helper Script: `Proxmox_Datacenter_Manager-ct.sh`
+- CT ID: `21301`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `1 vCPU / 512MB / 5GB`
+- CPU / RAM / Storage: `2 vCPU / 2GB / 10GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- Beszel monitoring agent and dashboard
-- Exposes metrics compatible with Prometheus and Grafana
+- Proxmox Datacenter Manager web application
+- Centralized API access to multiple Proxmox VE clusters
 
 ## 🚀 Usage
-- Access via web UI: `http://<ip_address>:8090`
-- Integrate with Grafana on Mimir using Prometheus endpoints
+- Access via web UI: `http://<ip_address>:8443`
+- View and manage nodes, clusters, storage, and workloads
+- Perform common administrative tasks from a single interface
 
 ## 🔐 Configuration
-- Environment variables and secrets are set via the helper script and `.settings` files
-  - examples in `lxc-config.conf`
-- Configuration files stored inside `/config` volume mounted in the container 
+- Environment variables and secrets are set via the helper script and *.vars files
+- Proxmox API tokens used for read/write access to managed clusters 
 
 ## 📌 Notes / TODO
-- Enable authentication for dashboard (optional)
-- Add alert rules for critical thresholds
+- Restrict access via reverse proxy and authentication
+- Scope API tokens to least-privilege roles
+- Document supported Proxmox VE versions and limitations
