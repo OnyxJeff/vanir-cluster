@@ -3,7 +3,7 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>Pf2eTools LXC</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>Streamer LXC</h2>
 
 <p style='margin: 16px 0;'>
     <a href='https://ko-fi.com/community_scripts' target='_blank' rel='noopener noreferrer'>
