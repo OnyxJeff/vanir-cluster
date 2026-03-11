@@ -59,7 +59,7 @@ This container provides a lightweight, headless streaming service built on FFmpe
 - Created via Proxmox Helper Script: `debian_CT-ct.sh`
 - CT ID: `21101`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `4 vCPU / 8196MB / 10GB`
+- CPU / RAM / Storage: `2 vCPU / 4096MB / 10GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
@@ -81,3 +81,236 @@ This container provides a lightweight, headless streaming service built on FFmpe
 - Add systemd service for auto-start and restart
 - Tune FFmpeg encoding settings for bitrate and CPU efficiency
 - Optional: add “stream offline” fallback screen
+
+- Install dependencies
+```bash
+apt update
+apt install -y \
+ffmpeg \
+chromium \
+xserver-xorg-video-dummy \
+xserver-xorg-core \
+x11-xserver-utils \
+fonts-dejavu \
+curl
+```
+
+- Xorg Dummy Display
+
+  - Create `/etc/X11/xorg.conf`
+
+  ```bash
+  Section "Device"
+      Identifier  "Configured Video Device"
+      Driver      "dummy"
+      VideoRam    256000
+  EndSection
+
+  Section "Monitor"
+      Identifier  "Configured Monitor"
+      HorizSync   5.0 - 1000.0
+      VertRefresh 5.0 - 200.0
+  EndSection
+
+  Section "Screen"
+      Identifier "Default Screen"
+      Monitor    "Configured Monitor"
+      Device     "Configured Video Device"
+
+      SubSection "Display"
+          Depth 24
+          Modes "1920x1080"
+      EndSubSection
+  EndSection
+  ```
+
+- Stream Configuration
+
+  - Create `/opt/streamer/stream.conf`
+
+  ```bash
+  STREAM_KEY="live_xxxxxxxxx"
+  STREAM_URL="rtmp://live.twitch.tv/app"
+
+  DISCORD_WEBHOOK="https://discord.com/api/webhooks/XXXX/XXXX"
+
+  PLAYLIST_URL="https://grafana.example.com/playlists/play/1?kiosk"
+
+  WIDTH=1920
+  HEIGHT=1080
+  FPS=30
+
+  VIDEO_BITRATE="4500k"
+  MAXRATE="5000k"
+  BUFSIZE="9000k"
+
+  DISPLAY=":0"
+  ```
+- Stream Pipeline Script
+
+  - Create `/opt/streamer/start-stream.sh`
+
+  ```bash
+  #!/bin/bash
+
+  set -e
+
+  source /opt/streamer/stream.conf
+
+  RESOLUTION="${WIDTH}x${HEIGHT}"
+
+  echo "Starting Xorg..."
+
+  pkill Xorg || true
+  Xorg $DISPLAY -noreset +extension GLX +extension RANDR +extension RENDER -nocursor &
+
+  sleep 5
+
+  echo "Launching Chromium..."
+
+  pkill chromium || true
+
+  chromium \
+  --kiosk \
+  --no-sandbox \
+  --disable-dev-shm-usage \
+  --disable-gpu \
+  --disable-background-networking \
+  --disable-software-rasterizer \
+  --disable-infobars \
+  --disable-session-crashed-bubble \
+  --start-fullscreen \
+  --window-size=$WIDTH,$HEIGHT \
+  "$PLAYLIST_URL" \
+  --display=$DISPLAY &
+
+  sleep 10
+  
+  /opt/streamer/discord.sh "📺 Twitch Stream is starting."
+
+  echo "Starting FFmpeg stream..."
+
+  ffmpeg -loglevel warning \
+  -f x11grab \
+  -video_size $RESOLUTION \
+  -framerate $FPS \
+  -i $DISPLAY.0 \
+  -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='%{localtime\:%Y-%m-%d %H\\\\:%M\\\\:%S}':x=20:y=20:fontsize=36:fontcolor=white:box=1:boxcolor=0x00000099" \
+  -c:v libx264 \
+  -preset veryfast \
+  -pix_fmt yuv420p \
+  -maxrate $MAXRATE \
+  -bufsize $BUFSIZE \
+  -g 60 \
+  -b:v $VIDEO_BITRATE \
+  -f flv \
+  "$STREAM_URL/$STREAM_KEY"
+  ```
+
+  - Make executable:
+  ```bash
+  chmod +x /opt/streamer/start-stream.sh
+  ```
+
+- Watchdog Script
+
+  - Create `/opt/streamer/watchdog.sh`
+
+  ```bash
+  #!/bin/bash
+  while true
+  do
+      echo "Starting Twitch stream pipeline..."
+      /opt/streamer/start-stream.sh
+      /opt/streamer/discord.sh "⚠️ Twitch Stream stopped. Restarting..."
+      sleep 5
+  done
+  ```
+
+  - Make executable:
+  ```bash
+  chmod +x /opt/streamer/watchdog.sh
+  ```
+
+- Systemd Service
+
+  - Create `/etc/systemd/system/twitch-stream.service`
+
+  ```ini
+  [Unit]
+  Description=Homelab Grafana Twitch Stream
+  After=network.target
+
+  [Service]
+  Type=simple
+  Restart=always
+  RestartSec=5
+  ExecStart=/opt/streamer/watchdog.sh
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+
+  - Enable it:
+  ```bash
+  systemctl daemon-reload
+  systemctl enable twitch-stream
+  systemctl start twitch-stream
+  ```
+
+- Daily Restart Service & Timer Service
+
+  - Create `/etc/systemd/system/twitch-stream-restart.service`
+
+  ```ini
+  [Unit]
+  Description=Restart Twitch Stream
+
+  [Service]
+  Type=oneshot
+  ExecStart=/bin/systemctl restart twitch-stream.service
+  ```
+
+  - Create `/etc/systemd/system/twitch-stream-restart.timer`
+
+  ```ini
+  [Unit]
+  Description=Daily Restart of Twitch Stream
+
+  [Timer]
+  OnCalendar=*-*-* 00:00:00
+  Persistent=true
+
+  [Install]
+  WantedBy=timers.target
+  ```
+
+  - Enable & Start:
+  ```bash
+  systemctl daemon-reload
+  systemctl enable twitch-stream-restart.timer
+  systemctl start twitch-stream-restart.timer
+  systemctl list-timers | grep twitch
+  ```
+
+- Discord Notify Script
+
+  - Create `/opt/streamer/discord.sh`
+
+  ```bash
+  #!/bin/bash
+  source /opt/streamer/stream.conf
+
+  MSG="$1"
+
+  curl -s -H "Content-Type: application/json" \
+  -d "{\"content\":\"$MSG\"}" \
+  "$DISCORD_WEBHOOK" > /dev/null
+  ```
+
+  - Make executable:
+  ```bash
+  chmod +x /opt/streamer/discord.sh
+  ```
+
+- Hook into `start-stream.sh`
