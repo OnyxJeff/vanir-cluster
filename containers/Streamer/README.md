@@ -3,7 +3,13 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/ffmpeg.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>Streamer LXC</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>Streamer</h2>
+
+<p style='margin: 16px 0;'>
+    <a href='https://community-scripts.org/donate' target='_blank' rel='noopener noreferrer'>
+    <img src='https://img.shields.io/badge/❤️-Sponsoring%20%26%20Donations-FF5E5B' alt='Sponsoring and donations' />
+    </a>
+</p>
 
 <span style='margin: 0 10px;'>
     <i class="fa fa-github fa-fw" style="color: #f5f5f5;"></i>

@@ -3,11 +3,17 @@
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/zipline.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
-<h2 style='font-size: 24px; margin: 20px 0;'>Pf2eTools LXC</h2>
+<h2 style='font-size: 24px; margin: 20px 0;'>Zipline</h2>
 
 <p style='margin: 16px 0;'>
-    <a href='https://ko-fi.com/community_scripts' target='_blank' rel='noopener noreferrer'>
-    <img src='https://img.shields.io/badge/&#x2615;-Buy us a coffee-blue' alt='spend Coffee' />
+    <a href='https://community-scripts.org/donate' target='_blank' rel='noopener noreferrer'>
+    <img src='https://img.shields.io/badge/❤️-Sponsoring%20%26%20Donations-FF5E5B' alt='Sponsoring and donations' />
+    </a>
+</p>
+
+<p style='margin: 12px 0;'>
+    <a href='https://community-scripts.org/scripts/zipline' target='_blank' rel='noopener noreferrer'>
+      <img src='https://img.shields.io/badge/📦-Open%20Script%20Page-00617f' alt='Open script page' />
     </a>
 </p>
 
