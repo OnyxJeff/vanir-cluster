@@ -36,7 +36,7 @@ jobs:
       - name: Validate expected directory layout
         run: |
           echo "Checking for required directories..."
-          for d in hardware images notes .github/workflows; do
+          for d in containers hardware images scripts .github/workflows; do
             if [ ! -d "$d" ]; then
               echo "❌ Missing expected directory: $d"
               exit 1
