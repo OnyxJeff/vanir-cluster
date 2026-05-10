@@ -6,6 +6,8 @@
 ![GitHub release](https://img.shields.io/github/v/release/OnyxJeff/vanir-cluster)
 ![Issues](https://img.shields.io/github/issues/OnyxJeff/vanir-cluster)
 
+![logo (not mine/borrowed)](../../images/vanir.png)
+
 Vanir is the scrappy Intel NUC hero of the homelab — small but shockingly capable.  
 It runs on an i5-5300U, 16GB of RAM, and enough determination to power a small village.
 
