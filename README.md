@@ -22,16 +22,13 @@ Think of it as the utility knife of the environment: not the strongest, but alwa
 ## 📂 Directory Structure
 ```text
 vanir-cluster/
+├── .github/workflows/
 ├── containers/
-│ ├── Authelia/
-│ │ ├── lxc-config.conf
+│ ├── Pathfinder2eTools/
 │ │ └── README.md
-│ ├── Beszel/
+│ ├── Pelican-Wings/
 │ │ └── ...
 │ └── ...
-├── env/
-│ ├── gitea.env.example
-│ └── media-stack.env.example
 ├── hardware/
 │ └── parts-list.md
 ├── images/
@@ -40,17 +37,22 @@ vanir-cluster/
 │ ├── ...
 │ └── ...
 ├── scripts/
-│ ├── deploy.sh
-│ └── backup.sh
+│ ├── <container>-ct.sh
+│ └── <virtual machince>-vm.sh
+├── vars/
+│ ├── <ct>.vars
+│ ├── <vm>.vars
+│ └── ...
 ├── VMs/
 │ ├── Future_VM/
-│ │ ├── vm-config.conf
-│ │ └── README.md
-│ ├── Portainer/
-│ │ └── ...
-│ └── ...
+│ └── Netboot-XYZ/
+│   └── README.md
 ├── .gitignore
-└── README.md
+├── game_server_requirements.md
+├── ID-naming-scheme.md
+├── LICENSE
+├── README.md
+└── script-runner.sh
 ```
 
 ---
