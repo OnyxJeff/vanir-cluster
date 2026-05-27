@@ -1,0 +1,18 @@
+[Unit]
+Description=HML Streamer Watchdog
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Environment=DISPLAY=:0
+ExecStart=/opt/streamer/hml-streamer.sh
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+# Optional: log output to journal
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
