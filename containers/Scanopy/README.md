@@ -1,9 +1,9 @@
 <div align='center'>
   <a href='https://community-scripts.org' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/pelican-panel.png' alt='Logo' style='width:81px;height:112px;'/>
+    <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/scanopy.png' alt='Logo' style='width:81px;height:112px;'/>
   </a>
 
-  <h2 style='font-size: 24px; margin: 20px 0;'>Pelican-Wings</h2>
+  <h2 style='font-size: 24px; margin: 20px 0;'>Scanopy LXC</h2>
 
   <p style='margin: 16px 0;'>
     <a href='https://community-scripts.org/donate' target='_blank' rel='noopener noreferrer'>
@@ -12,7 +12,7 @@
   </p>
 
   <p style='margin: 12px 0;'>
-    <a href='https://community-scripts.org/scripts/pelican-wings' target='_blank' rel='noopener noreferrer'>
+    <a href='https://community-scripts.org/scripts/scanopy' target='_blank' rel='noopener noreferrer'>
       <img src='https://img.shields.io/badge/📦-Open%20Script%20Page-00617f' alt='Open script page' />
     </a>
   </p>
@@ -34,34 +34,36 @@
 ---
 
 ## 📦 Overview
-Pelican Panel is a self-hosted game server management panel designed to deploy, manage, and monitor game servers through a modern web interface. This container hosts the Pelican control panel, providing centralized user management, server provisioning, and resource oversight for homelab-hosted game servers.
+Automatically discover and visually document network infrastructure
 
 ## 🖥️ Deployment
-- Created via Proxmox Helper Script: `pelican_panel-ct.sh`
-- CT ID: `21702`
+- Created via Proxmox Helper Script: `scanopy-ct.sh`
+- CT ID: `21303`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `2 vCPU / 4GB / 8GB`
+- CPU / RAM / Storage: `4 vCPU / 4GB / 8GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
-- Pelican Panel web application
-- Backend services for server orchestration and management
-- API endpoints for automation and integration
+- Automatic network discovery and inventory
+- Live topology mapping of physical and logical networks
+- Service detection for 200+ common applications and platforms
+- Agentless network scanning with scheduled updates
 
 ## 🚀 Usage
-- Access via web UI: `http://<ip_address>`
-- Create and manage game servers via the panel
-- Assign users, permissions, and resource limits
-- Monitor server status and basic metrics
+- Access the web UI: http://<ip_address>:60072
+- Configure one or more network ranges to scan
+- View automatically generated topology maps of hosts, services, VLANs, and network relationships
+- Export diagrams in SVG or Mermaid format, or embed them in documentation
 
 ## 🔐 Configuration
 - Environment variables and secrets are set via the helper script and `*.vars` files
-  - Database credentials
-  - Panel encryption keys and app secrets
-  - Mail and authentication settings
+  - Database connection details
+  - Network scan ranges and schedules
+  - User accounts and role-based access
+  - Scanner and discovery settings
 
 ## 📌 Notes / TODO
-- Deploy Wings (node daemon) on compute hosts
-- Place panel behind a reverse proxy with HTTPS
-- Configure backups and off-site storage
-- Lock down panel access with proper roles and permissions
+- Place behind a reverse proxy with HTTPS
+- Deploy additional scanners for isolated VLANs or remote sites
+- Exclude guest and transient networks from discovery
+- Integrate exported diagrams into homelab documentation

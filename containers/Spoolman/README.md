@@ -1,5 +1,5 @@
 <div align='center'>
-    <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
+    <a href='https://community-scripts.org/' target='_blank' rel='noopener noreferrer'>
     <img src='https://raw.githubusercontent.com/onyxjeff/vanir-cluster/main/images/spoolman.png' alt='Logo' style='width:174px;height:112px;'/>
     </a>
 
@@ -30,31 +30,6 @@
     <a href='https://github.com/community-scripts/ProxmoxVE/issues' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Issues</a>
 </span>
 </div>
-
----
-
-# Spoolman Container
-- CTID: 21302
-- OS: debian
-- Created via: Proxmox Helper Scripts
-- Notes:
-  - Purpose: Spoolman
-  - Storage: local-lvm
-  - Network: static IPv4 bind via DHCP / No IPv6
-
-## Raw Proxmox Config
-- arch: amd64
-- cores: 1
-- features: keyctl=1,nesting=1,fuse=1
-- hostname: hml-skuld
-- memory: 1024
-- net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
-- onboot: 1
-- ostype: debian
-- rootfs: local-lvm:vm-*-disk-0,size=4G
-- swap: 512
-- tags: community-script;3d-printing
-- unprivileged: 1
 
 ---
 

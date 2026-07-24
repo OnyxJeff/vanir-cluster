@@ -31,32 +31,6 @@
   </span>
 </div>
 
-
-
----
-
-# Netboot-XYZ Container
-- VMID: 11901
-- OS: debian 13
-- Created via: Proxmox Helper Scripts
-- Notes:
-  - Purpose: Netboot-XYZ
-  - Storage: local-lvm
-  - Network: static IPv4 bind via DHCP / No IPv6
-
-## Raw Proxmox Config
-- arch: amd64
-- cores: 1
-- hostname: hml-netboot
-- memory: 4096
-- net0: name=eth0,bridge=vmbr0,hwaddr=aa:bb:cc:dd:ee:ff,ip=dhcp,type=veth
-- onboot: 1
-- ostype: debian
-- rootfs: local-lvm:vm-*-disk-0,size=6G
-- swap: 512
-- tags: community-script;pxe-boot
-- unprivileged: 1
-
 ---
 
 ## 📦 Overview
