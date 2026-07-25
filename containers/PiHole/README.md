@@ -40,7 +40,7 @@ Pi-hole is a free, open-source network-level advertisement and Internet tracker 
 - Created via Proxmox Helper Script: `pihole-ct.sh`
 - CT ID: `20803`
 - OS / Template: Debian-based LXC template (from script)
-- CPU / RAM / Storage: `1 vCPU / 512MB / 2GB`
+- CPU / RAM / Storage: `1 vCPU / 512MB / 8GB`
 - Network: Configured via script (bridge and static IP settings)
 
 ## 🧰 Services
