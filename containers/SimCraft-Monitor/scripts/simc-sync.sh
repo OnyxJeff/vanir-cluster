@@ -2,7 +2,7 @@
 
 REMOTE_URL="http://downloads.simulationcraft.org/nightly"
 LOCAL="/srv/simc_win64"
-DISCORD_WEBHOOK="<WEBHOOK_URL>"
+DISCORD_WEBHOOK="https://discord.com/api/webhooks/1475621885923295384/gQnOpgPAG51q-oTfWrnCuANw58jMUD7ci2J6GabFx9Jyey7vRjPRuubQy0MU1TlD15gt"
 
 mkdir -p "$LOCAL"
 

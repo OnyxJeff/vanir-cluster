@@ -7,8 +7,8 @@ set -euo pipefail
 
 # ===== CONFIG =====
 DISPLAY=:0
-RTMP_URL="rtmp://live.twitch.tv/app/live_1373506901_JNTzwUoUnFDTmg7ybNeejBVxnfH0mQ"
-CHROMIUM_URL="http://10.100.0.12:3000/playlists/play/adm6hxq?kiosk=true&autofitpanels=true"
+RTMP_URL="rtmp://live.twitch.tv/app/live_1373506901_god5IMtg229k6vmXXjqnVMcxQfHolH"
+CHROMIUM_URL="https://grafana.onyxnethq.site/playlists/play/ad8ntfh?kiosk=true&autofitpanels=true&hideLogo=1&_dash.hideTimePicker=true&_dash.hideVariables=true&_dash.hideLinks=true&_dash.hidePlaylistNav=true"
 FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FPS=30
 OUTPUT_RES="1920x1080"
